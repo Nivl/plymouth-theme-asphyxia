@@ -10,10 +10,19 @@ A package is available in the user repositories
 
 ### Others
 
+Depending of your linux disribution, some paths may need to be changed :
+
+* First locate your plymouth configuration directory (usualy */usr/share/plymouth* or */lib/plymouth*).
+* Then, if the path is **NOT** */usr/share/plymouth* you will have to open *asphyxia.plymouth* and replace */usr/share/plymouth* by the correct path.
+
+Now, open a terminal :
+
     git clone git://github.com/Nivl/plymouth-theme-asphyxia.git
+    cd plymouth-theme-asphyxia
+    # Edit asphyxia/asphyxia.plymouth if needed.
+    # In the next commande replace [YOUR_PATH] by the correct one (the brackets need to be replaced too)
+    cp -r asphyxia [YOUR_PATH]/themes/
 
-	cd plymouth-theme-asphyxia
-    # The folowing target directory may change depending of your distribution
-    cp -r asphyxia /usr/share/plymouth/themes/
+    plymouth-set-default-theme -R asphyxia
 
-	plymouth-set-default-theme -R asphyxia
+That's all!
